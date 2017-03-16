@@ -18,7 +18,7 @@ namespace TP4
         public Student(String name, int min, int max)
         {
             if (min > max) { throw new Exception("The minimal grade can't be higher than the maximal grade"); }
-            if (name == null) { throw new Exception("The name cannot be null. "); }
+            if (name == null) { throw new Exception("The name cannot be null. .l. "); }
             if (min < 0) { min = 0; }
             if (max > 20) { max = 20; }
 
