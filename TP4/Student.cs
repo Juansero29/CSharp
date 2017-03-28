@@ -13,7 +13,7 @@ namespace TP4
 
         public Student MyProperty { get; set; }
 
-        public static Student[] Students = { new Student("Juan", 8, 18), new Student("Toto", 2, 17), new Student("Stard", 10, 12) };
+        public static Student[] Students = { new Student("Juansero", 8, 18), new Student("Toto", 2, 17), new Student("Stard", 10, 12) };
 
         public Student(String name, int min, int max)
         {
