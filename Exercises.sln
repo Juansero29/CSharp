@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Complementary", "TPS CLUB INFO\Complementary.csproj", "{3588B225-56B0-450F-A0BF-9BF834608920}"
 EndProject
@@ -46,6 +46,78 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TP4", "TP4", "{CFD9C3FD-2EB7-4A6B-9E25-90BB1A64EDA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP4", "TP4\TP4.csproj", "{90C9C058-B020-436D-B252-1484CA8A3AF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tennis", "Tennis", "{4FD6FBFB-343E-4AEE-AA4A-FF8931B6BCBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "giMyMatchData", "Tennis\giMyMatchData\giMyMatchData.csproj", "{4E5C51D6-AFDE-4C9F-8162-55CB61FD0B3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchTracker", "Tennis\MatchTracker\MatchTracker.csproj", "{AEAEFE47-F8AA-4911-BD5C-D74D0443E557}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{FD6CBD3C-AAAA-45E1-9AA3-1C7B0843923E}"
+	ProjectSection(SolutionItems) = preProject
+		Tennis\Documentation\exos_04.pdf = Tennis\Documentation\exos_04.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doxygen", "Doxygen", "{88151849-4E3A-470F-BE15-AAE74F92F583}"
+	ProjectSection(SolutionItems) = preProject
+		Tennis\Documentation\docs\annotated.html = Tennis\Documentation\docs\annotated.html
+		Tennis\Documentation\docs\classes.html = Tennis\Documentation\docs\classes.html
+		Tennis\Documentation\docs\classEventArgs.html = Tennis\Documentation\docs\classEventArgs.html
+		Tennis\Documentation\docs\classEventArgs.png = Tennis\Documentation\docs\classEventArgs.png
+		Tennis\Documentation\docs\classgiCaster_1_1TennisCaster-members.html = Tennis\Documentation\docs\classgiCaster_1_1TennisCaster-members.html
+		Tennis\Documentation\docs\classgiCaster_1_1TennisCaster.html = Tennis\Documentation\docs\classgiCaster_1_1TennisCaster.html
+		Tennis\Documentation\docs\classgiCaster_1_1TennisCaster_1_1PointGagn_xC3_xA9EventArgs-members.html = Tennis\Documentation\docs\classgiCaster_1_1TennisCaster_1_1PointGagn_xC3_xA9EventArgs-members.html
+		Tennis\Documentation\docs\classgiCaster_1_1TennisCaster_1_1PointGagn_xC3_xA9EventArgs.html = Tennis\Documentation\docs\classgiCaster_1_1TennisCaster_1_1PointGagn_xC3_xA9EventArgs.html
+		Tennis\Documentation\docs\classgiCaster_1_1TennisCaster_1_1PointGagn_xC3_xA9EventArgs.png = Tennis\Documentation\docs\classgiCaster_1_1TennisCaster_1_1PointGagn_xC3_xA9EventArgs.png
+		Tennis\Documentation\docs\classgiMatchData_1_1Jeu-members.html = Tennis\Documentation\docs\classgiMatchData_1_1Jeu-members.html
+		Tennis\Documentation\docs\classgiMatchData_1_1Jeu.html = Tennis\Documentation\docs\classgiMatchData_1_1Jeu.html
+		Tennis\Documentation\docs\classgiMatchData_1_1Jeu.png = Tennis\Documentation\docs\classgiMatchData_1_1Jeu.png
+		Tennis\Documentation\docs\classgiMatchData_1_1Match-members.html = Tennis\Documentation\docs\classgiMatchData_1_1Match-members.html
+		Tennis\Documentation\docs\classgiMatchData_1_1Match.html = Tennis\Documentation\docs\classgiMatchData_1_1Match.html
+		Tennis\Documentation\docs\classgiMatchData_1_1Match.png = Tennis\Documentation\docs\classgiMatchData_1_1Match.png
+		Tennis\Documentation\docs\classgiMatchData_1_1Set-members.html = Tennis\Documentation\docs\classgiMatchData_1_1Set-members.html
+		Tennis\Documentation\docs\classgiMatchData_1_1Set.html = Tennis\Documentation\docs\classgiMatchData_1_1Set.html
+		Tennis\Documentation\docs\classgiMatchData_1_1TieBreak-members.html = Tennis\Documentation\docs\classgiMatchData_1_1TieBreak-members.html
+		Tennis\Documentation\docs\classgiMatchData_1_1TieBreak.html = Tennis\Documentation\docs\classgiMatchData_1_1TieBreak.html
+		Tennis\Documentation\docs\classgiMatchData_1_1TieBreak.png = Tennis\Documentation\docs\classgiMatchData_1_1TieBreak.png
+		Tennis\Documentation\docs\classgiMatchDisplayTool_1_1DisplayMatch-members.html = Tennis\Documentation\docs\classgiMatchDisplayTool_1_1DisplayMatch-members.html
+		Tennis\Documentation\docs\classgiMatchDisplayTool_1_1DisplayMatch.html = Tennis\Documentation\docs\classgiMatchDisplayTool_1_1DisplayMatch.html
+		Tennis\Documentation\docs\doxygen.css = Tennis\Documentation\docs\doxygen.css
+		Tennis\Documentation\docs\doxygen.png = Tennis\Documentation\docs\doxygen.png
+		Tennis\Documentation\docs\ftv2blank.png = Tennis\Documentation\docs\ftv2blank.png
+		Tennis\Documentation\docs\ftv2doc.png = Tennis\Documentation\docs\ftv2doc.png
+		Tennis\Documentation\docs\ftv2folderclosed.png = Tennis\Documentation\docs\ftv2folderclosed.png
+		Tennis\Documentation\docs\ftv2folderopen.png = Tennis\Documentation\docs\ftv2folderopen.png
+		Tennis\Documentation\docs\ftv2lastnode.png = Tennis\Documentation\docs\ftv2lastnode.png
+		Tennis\Documentation\docs\ftv2link.png = Tennis\Documentation\docs\ftv2link.png
+		Tennis\Documentation\docs\ftv2mlastnode.png = Tennis\Documentation\docs\ftv2mlastnode.png
+		Tennis\Documentation\docs\ftv2mnode.png = Tennis\Documentation\docs\ftv2mnode.png
+		Tennis\Documentation\docs\ftv2node.png = Tennis\Documentation\docs\ftv2node.png
+		Tennis\Documentation\docs\ftv2plastnode.png = Tennis\Documentation\docs\ftv2plastnode.png
+		Tennis\Documentation\docs\ftv2pnode.png = Tennis\Documentation\docs\ftv2pnode.png
+		Tennis\Documentation\docs\ftv2vertline.png = Tennis\Documentation\docs\ftv2vertline.png
+		Tennis\Documentation\docs\functions.html = Tennis\Documentation\docs\functions.html
+		Tennis\Documentation\docs\functions_enum.html = Tennis\Documentation\docs\functions_enum.html
+		Tennis\Documentation\docs\functions_evnt.html = Tennis\Documentation\docs\functions_evnt.html
+		Tennis\Documentation\docs\functions_func.html = Tennis\Documentation\docs\functions_func.html
+		Tennis\Documentation\docs\functions_prop.html = Tennis\Documentation\docs\functions_prop.html
+		Tennis\Documentation\docs\functions_vars.html = Tennis\Documentation\docs\functions_vars.html
+		Tennis\Documentation\docs\hierarchy.html = Tennis\Documentation\docs\hierarchy.html
+		Tennis\Documentation\docs\index.html = Tennis\Documentation\docs\index.html
+		Tennis\Documentation\docs\interfacegiMatchData_1_1IMatch-members.html = Tennis\Documentation\docs\interfacegiMatchData_1_1IMatch-members.html
+		Tennis\Documentation\docs\interfacegiMatchData_1_1IMatch.html = Tennis\Documentation\docs\interfacegiMatchData_1_1IMatch.html
+		Tennis\Documentation\docs\interfacegiMatchData_1_1IMatch.png = Tennis\Documentation\docs\interfacegiMatchData_1_1IMatch.png
+		Tennis\Documentation\docs\main.html = Tennis\Documentation\docs\main.html
+		Tennis\Documentation\docs\namespacegiCaster.html = Tennis\Documentation\docs\namespacegiCaster.html
+		Tennis\Documentation\docs\namespacegiMatchData.html = Tennis\Documentation\docs\namespacegiMatchData.html
+		Tennis\Documentation\docs\namespacegiMatchDisplayTool.html = Tennis\Documentation\docs\namespacegiMatchDisplayTool.html
+		Tennis\Documentation\docs\namespaces.html = Tennis\Documentation\docs\namespaces.html
+		Tennis\Documentation\docs\tab_b.gif = Tennis\Documentation\docs\tab_b.gif
+		Tennis\Documentation\docs\tab_l.gif = Tennis\Documentation\docs\tab_l.gif
+		Tennis\Documentation\docs\tab_r.gif = Tennis\Documentation\docs\tab_r.gif
+		Tennis\Documentation\docs\tabs.css = Tennis\Documentation\docs\tabs.css
+		Tennis\Documentation\docs\tree.html = Tennis\Documentation\docs\tree.html
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +181,14 @@ Global
 		{90C9C058-B020-436D-B252-1484CA8A3AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90C9C058-B020-436D-B252-1484CA8A3AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90C9C058-B020-436D-B252-1484CA8A3AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E5C51D6-AFDE-4C9F-8162-55CB61FD0B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5C51D6-AFDE-4C9F-8162-55CB61FD0B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5C51D6-AFDE-4C9F-8162-55CB61FD0B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5C51D6-AFDE-4C9F-8162-55CB61FD0B3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEAEFE47-F8AA-4911-BD5C-D74D0443E557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEAEFE47-F8AA-4911-BD5C-D74D0443E557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEAEFE47-F8AA-4911-BD5C-D74D0443E557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEAEFE47-F8AA-4911-BD5C-D74D0443E557}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,5 +212,10 @@ Global
 		{5CFA800C-58E9-441E-A53C-0FFBBDCC7493} = {9C9DFA63-C073-4489-819B-2571F692DEAA}
 		{CFD9C3FD-2EB7-4A6B-9E25-90BB1A64EDA5} = {553272DB-244A-4E76-B7DC-9BFB9C6728DD}
 		{90C9C058-B020-436D-B252-1484CA8A3AF7} = {CFD9C3FD-2EB7-4A6B-9E25-90BB1A64EDA5}
+		{4FD6FBFB-343E-4AEE-AA4A-FF8931B6BCBA} = {553272DB-244A-4E76-B7DC-9BFB9C6728DD}
+		{4E5C51D6-AFDE-4C9F-8162-55CB61FD0B3D} = {4FD6FBFB-343E-4AEE-AA4A-FF8931B6BCBA}
+		{AEAEFE47-F8AA-4911-BD5C-D74D0443E557} = {4FD6FBFB-343E-4AEE-AA4A-FF8931B6BCBA}
+		{FD6CBD3C-AAAA-45E1-9AA3-1C7B0843923E} = {4FD6FBFB-343E-4AEE-AA4A-FF8931B6BCBA}
+		{88151849-4E3A-470F-BE15-AAE74F92F583} = {FD6CBD3C-AAAA-45E1-9AA3-1C7B0843923E}
 	EndGlobalSection
 EndGlobal
