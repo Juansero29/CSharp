@@ -11,6 +11,7 @@ namespace Complementary
     {
         static void Main(string[] args)
         {
+            Exo1_01();
         }
 
 
