@@ -23,7 +23,7 @@ namespace Goos
         {
             Speak($"It's my turn, I'm at the space {CurrentSpace}.");
             int result = RollDice(); 
-            MovePlayer(result);
+            MovePawn(result);
         }
 
         public int RollDice()
@@ -47,7 +47,7 @@ namespace Goos
             }
         }
 
-        public void MovePlayer(int diceResult)
+        public void MovePawn(int diceResult)
         {
 
             int finalResult = diceResult + CurrentSpace;
