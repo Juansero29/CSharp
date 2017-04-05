@@ -15,7 +15,9 @@ namespace Goos
             g.AddPlayer(p1);
             g.AddPlayer(p2);
 
-            g.Start();
+            g.Play();
+
+
 
         }
     }

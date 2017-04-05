@@ -11,6 +11,7 @@ namespace Goos
         internal bool IsBlocked { get; set; }
         private int SuspendedTurns { get; set; }
         public int LastValuePlayed { get; private set; }
+
         private static readonly Random rnd = new Random();
 
         public Player(String name)
@@ -18,14 +19,19 @@ namespace Goos
             Name = name;
         }
 
-        public int Play()
+        public void Play()
         {
-            Speak($"It's my turn, I'm at the space {CurrentSpace}. I'm rolling the dices...");
-            Thread.Sleep(2000);
-            Speak("Hop!");
-            Thread.Sleep(2000);
+            Speak($"It's my turn, I'm at the space {CurrentSpace}.");
+            int result = RollDice(); 
+            MovePlayer(result);
+        }
+
+        public int RollDice()
+        {
             if (!IsBlocked)
             {
+                Thread.Sleep(50);
+                Speak("Hop!");
                 LastValuePlayed = rnd.Next(1, 6) + rnd.Next(1, 6);
                 Speak($"I rolled the dices and I got {LastValuePlayed}");
                 return LastValuePlayed;
@@ -40,6 +46,23 @@ namespace Goos
                 return 0;
             }
         }
+
+        public void MovePlayer(int diceResult)
+        {
+
+            int finalResult = diceResult + CurrentSpace;
+            if (finalResult > Board.NUMBER_OF_SPACES)
+            {
+                finalResult = (Board.NUMBER_OF_SPACES * 2) - finalResult;
+
+            }
+
+            CurrentSpace = finalResult;
+
+            Speak($"I'm moving to the space #{CurrentSpace}");
+            Thread.Sleep(50);
+        }
+      
 
         private void Speak(String msg)
         {

@@ -9,11 +9,17 @@ namespace Goos
     class Game
     {
 
-        private static readonly int NUMBER_OF_PLAYERS = 4; //Total number of possible players.
+        private static int NUMBER_OF_PLAYERS = 4; //Total number of possible players.
 
         Board Board = new Board();
-   
-        Player[] Players = new Player[NUMBER_OF_PLAYERS];
+
+        private Player[] Players { get; set; }
+
+        public Game(params Player[] p)
+        {
+            Players = new Player[NUMBER_OF_PLAYERS];
+        }
+
         private bool IsFinished;
         private Player NextPlayer { get; set; }
         private int Index
@@ -23,44 +29,42 @@ namespace Goos
         }
         private int mIndex; //Variable to control the value of 'Index'.
 
-        public void Start()
+        public void Play()
         {
-            Player FirstPlayer = DoTheFirstRound(Players);
+            Player FirstPlayer = GetFirstPlayer(Players);
             Index = Array.IndexOf(Players, FirstPlayer); //Gets the index of the FirstPlayer to make him play.
 
             //The first player plays and is moved accordingly to his result
             Console.WriteLine("\n -- STARTING GAME -- \n");
             NextPlayer = Players[Index];
-            MovePlayer(NextPlayer, NextPlayer.Play());
+            NextPlayer.Play();
             Console.WriteLine("\n");
 
             while (!IsFinished) //While the game is not finished...
             {
 
                 NextPlayer = Players[Index]; //The next player is the player at the Index's value.
-                if (NextPlayer != null)
+
+                if (NextPlayer != null)//If it isn't null, we make him Play and we move him.
                 {
-                    MovePlayer(NextPlayer, NextPlayer.Play()); //If it isn't null, we make him Play and we move him.
+                    NextPlayer.Play();
+                    Index++;  //Next player is going to play
                 }
                 else
                 {
                     Index++; //If it is null, we skip it.
                 }
-                if (NextPlayer != null && NextPlayer.CurrentSpace >= Board.NUMBER_OF_SPACES)
+
+                if (NextPlayer != null && NextPlayer.CurrentSpace == Board.NUMBER_OF_SPACES)
                 {
                     IsFinished = true; //Game is finished when NextPlayer is not null and his current space is equal to the last space avaible.
                     Console.WriteLine($"\n -- GAME FINISHED! WINNER IS {NextPlayer.Name}  -- \n");
                 }
+
                 Console.WriteLine("\n");
             }
         }
 
-        //Moves a player to +diceResult spaces from his current space.
-        public void MovePlayer(Player p, int diceResult)
-        {
-            p.CurrentSpace = p.CurrentSpace + diceResult;
-            Index++; //We now the next player in the array must play, so we increment the Index of one...
-        }
 
 
         //Adds a player to the game.
@@ -72,7 +76,7 @@ namespace Goos
 
 
         //Makes all the players play once and returns the player who had the highest number.
-        private Player DoTheFirstRound(Player[] players)
+        private Player GetFirstPlayer(Player[] players)
         {
             Console.WriteLine("\n -- DOING DECISION ROUND -- \n");
             Player mStartingPlayer = null;
@@ -81,7 +85,7 @@ namespace Goos
             {
                 if (p != null)
                 {
-                    p.Play(); //We make everyone roll the dices...
+                    p.RollDice(); //We make everyone roll the dices...
                 }
             }
 
