@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using static System.Console;
 
@@ -6,16 +7,18 @@ namespace Goos
 {
     class Player
     {
+        public int TurnsPlayed { get; private set; }
         public string Name { get; private set; }
         internal int CurrentSpace { get; set; }
         internal bool IsBlocked { get; set; }
         private int SuspendedTurns { get; set; }
-        public int LastValuePlayed { get; private set; }
+        public int[] LastValuePlayed { get; private set; }
 
         private static readonly Random rnd = new Random();
 
         public Player(String name)
         {
+            LastValuePlayed = new int[2];
             Name = name;
         }
 
@@ -24,6 +27,7 @@ namespace Goos
             Speak($"It's my turn, I'm at the space {CurrentSpace}.");
             int result = RollDice(); 
             MovePawn(result);
+            TurnsPlayed++;
         }
 
         public int RollDice()
@@ -32,9 +36,10 @@ namespace Goos
             {
                 Thread.Sleep(50);
                 Speak("Hop!");
-                LastValuePlayed = rnd.Next(1, 6) + rnd.Next(1, 6);
-                Speak($"I rolled the dices and I got {LastValuePlayed}");
-                return LastValuePlayed;
+                LastValuePlayed[0] = rnd.Next(1, 7);
+                LastValuePlayed[1] = rnd.Next(1, 7);
+                Speak($"I rolled the dices and I got {LastValuePlayed.Sum()}");
+                return LastValuePlayed.Sum();
             }
             else
             {

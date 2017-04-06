@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace Goos
 {
     class Program
@@ -10,13 +11,15 @@ namespace Goos
             Player p1 = new Player("Juan");
             Player p2 = new Player("Toto");
 
-            //b pourrait accepter plusieurs joueurs dans cette méthode.
+            //Add player could maybe accept more than one player... (params)
             g.AddPlayer(p0);
             g.AddPlayer(p1);
             g.AddPlayer(p2);
 
             g.Play();
 
+
+            Console.ReadKey();
 
 
         }

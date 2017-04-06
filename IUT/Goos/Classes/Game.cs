@@ -11,14 +11,16 @@ namespace Goos
 
         private static int NUMBER_OF_PLAYERS = 4; //Total number of possible players.
 
-        Board Board = new Board();
+        Board board = new Board();
 
         private Player[] Players { get; set; }
 
-        public Game(params Player[] p)
-        {
-            Players = new Player[NUMBER_OF_PLAYERS];
-        }
+        public Game(params Player[] p) => Players = new Player[NUMBER_OF_PLAYERS];
+
+        //public Game(params Player[] p)
+        //{
+        //    Players = new Player[NUMBER_OF_PLAYERS];
+        //}
 
         private bool IsFinished;
         private Player NextPlayer { get; set; }
@@ -36,8 +38,6 @@ namespace Goos
 
             //The first player plays and is moved accordingly to his result
             Console.WriteLine("\n -- STARTING GAME -- \n");
-            NextPlayer = Players[Index];
-            NextPlayer.Play();
             Console.WriteLine("\n");
 
             while (!IsFinished) //While the game is not finished...
@@ -48,6 +48,7 @@ namespace Goos
                 if (NextPlayer != null)//If it isn't null, we make him Play and we move him.
                 {
                     NextPlayer.Play();
+                    board.ActivateSpace(NextPlayer, NextPlayer.CurrentSpace);
                     Index++;  //Next player is going to play
                 }
                 else
@@ -64,8 +65,6 @@ namespace Goos
                 Console.WriteLine("\n");
             }
         }
-
-
 
         //Adds a player to the game.
         public void AddPlayer(Player p)
@@ -93,13 +92,13 @@ namespace Goos
             {
                 if (Players[i] != null)
                 {
-                    results[i] = Players[i].LastValuePlayed; //We stock the last values in an array.
+                    results[i] = Players[i].LastValuePlayed.Sum(); //We stock the last values in an array.
                 }
             }
 
             for (int i = 0; i < results.Length; i++)
             {
-                if (Players[i] != null && Players[i].LastValuePlayed == results.Max()) //We get the max number in the array and compare it to each of the player's last value played in order to get the right player.
+                if (Players[i] != null && Players[i].LastValuePlayed.Sum() == results.Max()) //We get the max number in the array and compare it to each of the player's last value played in order to get the right player.
                 {
                     mStartingPlayer = Players[i]; //We stock the player in a variable to return...
                 }
