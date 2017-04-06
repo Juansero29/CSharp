@@ -11,7 +11,7 @@ namespace Goos
         public string Name { get; private set; }
         internal int CurrentSpace { get; set; }
         internal bool IsBlocked { get; set; }
-        private int SuspendedTurns { get; set; }
+        internal int SuspendedTurns { get; private set; }
         public int[] LastValuePlayed { get; private set; }
 
         private static readonly Random rnd = new Random();
@@ -34,12 +34,11 @@ namespace Goos
         {
             if (!IsBlocked)
             {
-                Thread.Sleep(50);
+                Thread.Sleep(500);
                 Speak("Hop!");
                 LastValuePlayed[0] = rnd.Next(1, 7);
                 LastValuePlayed[1] = rnd.Next(1, 7);
                 Speak($"I rolled the dices and I got {LastValuePlayed.Sum()}");
-                return LastValuePlayed.Sum();
             }
             else
             {
@@ -48,8 +47,10 @@ namespace Goos
                     Speak("I'm blocked and I can't play.");
                     SuspendedTurns--;
                 }
-                return 0;
+                LastValuePlayed[0] = 0;
+                LastValuePlayed[1] = 0;
             }
+            return LastValuePlayed.Sum();
         }
 
         public void MovePawn(int diceResult)
@@ -76,12 +77,14 @@ namespace Goos
 
         internal void BlockTwoTurns()
         {
-            if (SuspendedTurns == 0)
+            if (LastValuePlayed.Sum() != 0)
+            {
+                SuspendedTurns = 2;
+                IsBlocked = true;
+            } else if (SuspendedTurns == 0)
             {
                 IsBlocked = false;
             }
-            SuspendedTurns = 2;
-            IsBlocked = true;
         }
     }
 }

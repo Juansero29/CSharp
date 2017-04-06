@@ -1,4 +1,5 @@
-﻿using static System.Console;
+﻿using System.Linq;
+using static System.Console;
 
 namespace Goos
 {
@@ -21,11 +22,11 @@ namespace Goos
     {
         private Player BlockedPlayer { get; set; }
 
-        public BlockedSpace() : base(){}
+        public BlockedSpace() : base() { }
 
         public override void Activate(Player p, int[] diceResult)
         {
-            if(p != null)
+            if (p != null)
             {
                 base.Activate(p, diceResult);
                 if (BlockedPlayer == null)
@@ -41,7 +42,7 @@ namespace Goos
 
             }
         }
-     }
+    }
 
     class HotelSpace : Space
     {
@@ -50,6 +51,7 @@ namespace Goos
         public override void Activate(Player p, int[] diceResult)
         {
             base.Activate(p, diceResult);
+
             p.BlockTwoTurns();
         }
     }
@@ -62,9 +64,9 @@ namespace Goos
         {
             base.Activate(p, diceResult);
 
-            if(p.TurnsPlayed == 1 && p.LastValuePlayed[0] == 6 && p.LastValuePlayed[1] == 3)
+            if (p.TurnsPlayed == 1 && p.LastValuePlayed[0] == 6 && p.LastValuePlayed[1] == 3)
             {
-                WriteLine($"Player {p.Name} has been moved to case 26. (they played 6 and 3 in their first turn)");             
+                WriteLine($"Player {p.Name} has been moved to case 26. (they played 6 and 3 in their first turn)");
                 p.CurrentSpace = 26;
             }
 
