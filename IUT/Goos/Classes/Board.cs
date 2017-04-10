@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Goos
+namespace Goose
 {
     class Board
     {

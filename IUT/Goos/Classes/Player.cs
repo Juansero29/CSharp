@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading;
 using static System.Console;
 
-namespace Goos
+namespace Goose
 {
     class Player
     {

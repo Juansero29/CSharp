@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using static System.Console;
 
-namespace Goos
+namespace Goose
 {
     class Space
     {
