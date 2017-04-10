@@ -25,7 +25,7 @@ namespace Goose
         public void Play()
         {
             Speak($"It's my turn, I'm at the space {CurrentSpace}.");
-            int result = RollDice(); 
+            int result = RollDice();
             MovePawn(result);
             TurnsPlayed++;
         }
@@ -62,13 +62,14 @@ namespace Goose
                 finalResult = (Board.NUMBER_OF_SPACES * 2) - finalResult;
 
             }
-
-            CurrentSpace = finalResult;
-
-            Speak($"I'm moving to the space #{CurrentSpace}");
+            if (finalResult != CurrentSpace)
+            {
+                CurrentSpace = finalResult;
+                Speak($"I'm moving to the space #{CurrentSpace}");
+            }
             Thread.Sleep(500);
         }
-      
+
 
         private void Speak(String msg)
         {
@@ -81,7 +82,8 @@ namespace Goose
             {
                 SuspendedTurns = 2;
                 IsBlocked = true;
-            } else if (SuspendedTurns == 0)
+            }
+            else if (SuspendedTurns == 0)
             {
                 IsBlocked = false;
             }
