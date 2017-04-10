@@ -8,7 +8,7 @@ namespace Goos
 
         internal static readonly int numberOfSpaces = 64; //Total number of spaces in the board.
 
-        internal static int NUMBER_OF_SPACES { get { return numberOfSpaces - 1;  } }
+        internal static int NUMBER_OF_SPACES { get { return numberOfSpaces - 1; } }
 
         Space[] Spaces = new Space[numberOfSpaces];
 
@@ -22,7 +22,7 @@ namespace Goos
             for (int i = 0; i < Spaces.Length; i++)
             {
                 Spaces[i] = new Space();
-                
+
                 if (i == 9)
                 {
                     Spaces[i] = new TeleportSpace();
@@ -38,9 +38,8 @@ namespace Goos
                     Spaces[i] = new BlockedSpace();
                 }
 
-                if (i == 42)
-                {
-                    Spaces[i] = new BlockedSpace();
+                if (i == 42) {
+                    Spaces[i] = new TeleportSpace();
                 }
 
                 if (i == 52)

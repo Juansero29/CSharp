@@ -42,9 +42,9 @@ namespace Goos
             }
             else
             {
+                Speak("I'm blocked and I can't play.");
                 if (SuspendedTurns > 0)
                 {
-                    Speak("I'm blocked and I can't play.");
                     SuspendedTurns--;
                 }
                 LastValuePlayed[0] = 0;
@@ -66,7 +66,7 @@ namespace Goos
             CurrentSpace = finalResult;
 
             Speak($"I'm moving to the space #{CurrentSpace}");
-            Thread.Sleep(50);
+            Thread.Sleep(500);
         }
       
 

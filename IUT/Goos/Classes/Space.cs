@@ -32,13 +32,15 @@ namespace Goos
                 if (BlockedPlayer == null)
                 {
                     BlockedPlayer = p;
+                    p.IsBlocked = true;
                 }
                 if (p != BlockedPlayer)
                 {
                     BlockedPlayer.IsBlocked = false;
-                    p.IsBlocked = true;
                     BlockedPlayer = p;
                 }
+
+                p.IsBlocked = true;
 
             }
         }
@@ -86,6 +88,12 @@ namespace Goos
             {
                 WriteLine($"Player {p.Name} has been moved to case 30! (they arrived at space # 42, there's a laberynth! )");
                 p.CurrentSpace = 30;
+            }
+
+            if (p.CurrentSpace == 58)
+            {
+                WriteLine($"Player {p.Name} has died! Moving to space 0 (they arrived at space # 58! )");
+                p.CurrentSpace = 0;
             }
         }
     }
