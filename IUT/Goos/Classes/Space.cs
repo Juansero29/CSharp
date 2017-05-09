@@ -66,13 +66,13 @@ namespace Goose
         {
             base.Activate(p, diceResult);
 
-            if (p.TurnsPlayed == 1 && p.LastValuePlayed[0] == 6 && p.LastValuePlayed[1] == 3)
+            if (p.TurnsPlayed == 1 && (p.LastValuePlayed[0] == 6 && p.LastValuePlayed[1] == 3 || p.LastValuePlayed[0] == 3 && p.LastValuePlayed[1] == 6))
             {
                 WriteLine($"Player {p.Name} has been moved to case 26. (they played 6 and 3 in their first turn)");
                 p.CurrentSpace = 26;
             }
 
-            if (p.TurnsPlayed == 1 && p.LastValuePlayed[0] == 4 && p.LastValuePlayed[1] == 5)
+            if (p.TurnsPlayed == 1 && (p.LastValuePlayed[0] == 4 && p.LastValuePlayed[1] == 5 || p.LastValuePlayed[0] == 5 && p.LastValuePlayed[1] == 4))
             {
                 WriteLine($"Player {p.Name} has been moved to case 53! (they played 4 and 5 in their first turn)");
                 p.CurrentSpace = 53;

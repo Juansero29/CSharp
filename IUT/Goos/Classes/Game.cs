@@ -22,6 +22,8 @@ namespace Goose
         //    Players = new Player[NUMBER_OF_PLAYERS];
         //}
 
+
+      
         private bool IsFinished;
         private Player NextPlayer { get; set; }
         private int Index
@@ -42,7 +44,7 @@ namespace Goose
 
             while (!IsFinished) //While the game is not finished...
             {
-
+                
                 NextPlayer = Players[Index]; //The next player is the player at the Index's value.
 
                 if (NextPlayer != null)//If it isn't null, we make him Play and we move him.
