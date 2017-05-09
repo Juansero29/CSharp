@@ -19,9 +19,16 @@ namespace LINQUERIES
             QueryTwo();
             3.
             QueryThree("1964", "Henderson", "Joe");
-            4.*/
+            4.
             QueryFour(new DateTime(1962, 1, 1), new DateTime(1964, 1, 1));
-            
+            5.
+            QueryFive();
+            6.
+            QuerySix();
+            7.
+            QuerySeven();
+            8.*/
+            QueryEight();
 
 
         }
@@ -43,7 +50,9 @@ namespace LINQUERIES
         {
             //Affichez la liste de tous les albums sur lesquels un Artiste joue du trombone.
             Disco d = new Disco();
-            d.Albums.OrderBy(album => album.Titre).Where(album => album.SideMen.Any(artist => artist.Value == "trombone")).ToList().ForEach(album => WriteLine(album));
+            d.Albums.OrderBy(album => album.Titre)
+                .Where(album => album.SideMen.Any(artist => artist.Value == "trombone"))
+                .ToList().ForEach(album => WriteLine(album));
         }
 
         static void QueryThree(string year, string lastName, string firstName)
@@ -76,9 +85,81 @@ namespace LINQUERIES
             Disco d = new Disco();
 
             d.Albums
-                .Where(album => album.DateEnregistrement.Date >= startDate && album.DateEnregistrement <= endDate.Date)
+                .Where(album => 
+                album.DateEnregistrement.Date >= startDate && 
+                album.DateEnregistrement <= endDate.Date)
                 .ToList()
                 .ForEach(album => WriteLine(album));
+        }
+
+        static void QueryFive()
+        {
+            /*
+             * Affichez toutes les années où au moins 
+             * un Album a été enregistré, par ordre 
+             * chronologique (comme sur l'image ci-dessous).
+             */
+            Disco d = new Disco();
+            d.Albums.GroupBy(album => album.DateEnregistrement.Year)
+                .ToList().ForEach(group => WriteLine(group.Key));
+        }
+
+        static void QuerySix()
+        {
+            /*
+             * Affichez tous les Leaders, par ordre
+             * alphabétique de nom puis de prénom 
+             * (comme sur l'image ci-dessous).
+             */
+
+            Disco d = new Disco();
+            d.Albums.Select(album => album.Leader)
+                .OrderBy(artist => artist.Nom)
+                .ThenBy(artist => artist.Prénom).Distinct()
+                .ToList().ForEach(artist => WriteLine(artist));
+        }
+
+        static void QuerySeven()
+        {
+            /*
+             * Affichez tous les albums regroupés
+             * par Leader (comme sur l'image ci-dessous).
+             * Les Leaders seront affichés par ordre alphabétique.
+             */
+
+            Disco d = new Disco();
+            d.Albums.GroupBy(album => album.Leader)
+                .OrderBy(pair => pair.Key.Nom)
+                .ThenBy(pair => pair.Key.Prénom)
+                .ToList()
+                .ForEach(pair =>
+                {
+                    WriteLine($"Albums de {pair.Key}:");
+                    foreach (var album in pair.ToList().Select(element => element))
+                    {
+                        WriteLine($"\t{album}");
+                    }
+                });
+        }
+
+        static void QueryEight()
+        {
+            /*
+             * Affichez le nombre de fois où les instruments
+             * apparaissent au total dans les disques. Ceux-ci 
+             * seront affichés en allant des plus utilisés vers
+             * les moins utilisés. Si des instruments sont ex 
+             * aequo, ils seront affichés sur la même ligne. 
+             * L'image ci-dessous montre le résultat à obtenir.
+             */
+
+            Disco d = new Disco();
+            d.Albums.ToList()
+                .SelectMany(album => album.SideMen.Values)
+                .ToList().GroupBy(instrument => instrument)
+                .OrderByDescending(group => group.Count())
+                .ToList().ForEach(group => 
+                WriteLine($"Instrument {group.Key} appears {group.Count()} times."));
 
         }
     }
