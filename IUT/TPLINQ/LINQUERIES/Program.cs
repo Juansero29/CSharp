@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System;using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,8 +26,11 @@ namespace LINQUERIES
             QuerySix();
             7.
             QuerySeven();
-            8.*/
+            8.
             QueryEight();
+            9.
+             */
+            QueryNine();
 
 
         }
@@ -160,6 +162,21 @@ namespace LINQUERIES
                 .OrderByDescending(group => group.Count())
                 .ToList().ForEach(group => 
                 WriteLine($"Instrument {group.Key} appears {group.Count()} times."));
+
+        }
+
+        static void QueryNine()
+        {
+            /*
+             * Affichez le ou les sidemen qui apparaissent
+             * le plus souvent sur les disques d'autres 
+             * musiciens (c'est-à-dire sur lesquels ils ne
+             * sont pas Leader). Puis affichez ceux qui 
+             * arrivent juste derrière (les seconds). Le 
+             * résultat à obtenir est présenté ci-dessous.
+             */
+
+
 
         }
     }
