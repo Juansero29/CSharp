@@ -201,7 +201,7 @@ namespace LINQUERIES
             }
 
             var max = dico.Values.Max();
-            //dico.ToList().Remove()
+            dico.ToList().RemoveAll(pair => pair.Value == max);
 
 
 
