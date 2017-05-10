@@ -176,6 +176,35 @@ namespace LINQUERIES
              * résultat à obtenir est présenté ci-dessous.
              */
 
+            Disco d = new Disco();
+
+            var leaders = d.Albums.ToList().Select(album => album.Leader).Distinct();
+
+
+            Dictionary<IArtiste, int> dico = new Dictionary<IArtiste, int>();
+
+
+
+            foreach(var leader in leaders)
+            {
+                int numberOfTimes = 0;
+                foreach(var album in d.Albums)
+                {
+                    if (!album.Leader.Equals(leader))
+                    {
+                        numberOfTimes += album.SideMen.Count(pair => pair.Key.Equals(leader));
+                    }
+                }
+
+                dico.Add(leader, numberOfTimes);
+                WriteLine($"The leader {leader} appears {numberOfTimes} times in other albums");
+            }
+
+            var max = dico.Values.Max();
+            //dico.ToList().Remove()
+
+
+
 
 
         }
