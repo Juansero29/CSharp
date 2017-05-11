@@ -178,35 +178,56 @@ namespace LINQUERIES
 
             Disco d = new Disco();
 
-            var leaders = d.Albums.ToList().Select(album => album.Leader).Distinct();
+            var sidemen = d.Albums.ToList().SelectMany(album => album.SideMen.Keys).Distinct();
+            //ALL SIDEMEN WITH NO DOUBLES
 
 
+            /*A dictionary containing a sidemen as key and the number of times this sidemen
+             appears on another album in which he is not leader*/
             Dictionary<IArtiste, int> dico = new Dictionary<IArtiste, int>();
 
 
-
-            foreach(var leader in leaders)
+            //foreach sidemen...
+            foreach(var artist in sidemen)
             {
+                
                 int numberOfTimes = 0;
+                //foreach existing album...
                 foreach(var album in d.Albums)
                 {
-                    if (!album.Leader.Equals(leader))
+
+                    //if the sidemen is not the leader of this album
+                    if (!album.Leader.Equals(artist))
                     {
-                        numberOfTimes += album.SideMen.Count(pair => pair.Key.Equals(leader));
+                        //we add the number of times this sidemen appear in this album to the numberOfTimes variable.
+                        numberOfTimes += album.SideMen.Count(pair => pair.Key.Equals(artist));
                     }
                 }
 
-                dico.Add(leader, numberOfTimes);
-                WriteLine($"The leader {leader} appears {numberOfTimes} times in other albums");
+                //once all albums have been looked at, we add the artist and the number of times he appears in other albums to the dictionary.
+                dico.Add(artist, numberOfTimes);
             }
 
+
+            //PROBLEM: How to get the maximum number of times that a sidemen has appeared in other albums?
+            //PROBLEM#2: How to get the second maximum number of times that a sidemen has appeared in other albums?
+
             var max = dico.Values.Max();
-            dico.ToList().RemoveAll(pair => pair.Value == max);
+            dico.ToList().ForEach(pair => { if (pair.Value == dico.Values.Max()) { WriteLine($" #1 = The sidemen {pair.Key} appears {pair.Value} times in other albums"); } });
+            var dicosansmax = dico.Where(pair => pair.Value != max).ToDictionary(pair => pair.Key, pair => pair.Value);
+            max = dicosansmax.Values.Max();
+            dico.ToList().ForEach(pair => { if (pair.Value == max) { WriteLine($" #2 = The sidemen {pair.Key} appears {pair.Value} times in other albums"); } });
+
+            Dictionary<IArtiste, int> dicotimes = new Dictionary<IArtiste, int>();
 
 
+            WriteLine($"\nWITH 3 LINES OF CODE:\n");
 
+            d.Albums.ToList().SelectMany(album => album.SideMen.Keys).Distinct().ToList().ForEach(artist =>{int numberOfTimes = 0; d.Albums.ToList().ForEach(album => { if (!album.Leader.Equals(artist)) { numberOfTimes += album.SideMen.Count(pair => pair.Key.Equals(artist)); } });dicotimes.Add(artist, numberOfTimes);});
 
+            dicotimes.ToList().ForEach(pair => { if (pair.Value == dicotimes.Values.Max()) { WriteLine($" #1 = The sidemen {pair.Key} appears {pair.Value} times in other albums"); } });
 
+            dicotimes.Where(pair => pair.Value != dicotimes.Values.Max()).ToDictionary(pair => pair.Key, pair => pair.Value).ToList().ForEach(pair => { if (pair.Value == dicotimes.Values.Max() - 1) { WriteLine($" #2 = The sidemen {pair.Key} appears {pair.Value} times in other albums"); } });
         }
     }
 }
