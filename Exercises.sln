@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TESTS", "TESTS\TESTS.csproj", "{2F2705F9-AA46-4E15-9182-B788722E8717}"
 EndProject
@@ -162,6 +162,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TP6", "TP6", "{79F94578-763
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tennis", "Tennis", "{733C657A-7A64-4377-B170-ED5E6B3217F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Complements", "Excercises\TP5\Complements\Complements.csproj", "{74C90D60-8870-45BE-81C8-5A7F439DE7C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -240,6 +242,10 @@ Global
 		{185A428C-432D-43DF-B32C-371CFE12D6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{185A428C-432D-43DF-B32C-371CFE12D6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{185A428C-432D-43DF-B32C-371CFE12D6F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74C90D60-8870-45BE-81C8-5A7F439DE7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C90D60-8870-45BE-81C8-5A7F439DE7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C90D60-8870-45BE-81C8-5A7F439DE7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C90D60-8870-45BE-81C8-5A7F439DE7C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -278,5 +284,6 @@ Global
 		{185A428C-432D-43DF-B32C-371CFE12D6F5} = {A6D63163-4145-4C85-B007-B334E5A674FE}
 		{79F94578-763C-47C5-9851-438B17FE57E3} = {553272DB-244A-4E76-B7DC-9BFB9C6728DD}
 		{733C657A-7A64-4377-B170-ED5E6B3217F8} = {4FD6FBFB-343E-4AEE-AA4A-FF8931B6BCBA}
+		{74C90D60-8870-45BE-81C8-5A7F439DE7C7} = {4FD6FBFB-343E-4AEE-AA4A-FF8931B6BCBA}
 	EndGlobalSection
 EndGlobal

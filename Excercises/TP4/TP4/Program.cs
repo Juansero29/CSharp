@@ -7,9 +7,17 @@ namespace TP4
     {
         static void Main(string[] args)
         {
-            Teacher t0 = new Teacher("Marc", LinearRepartition);
-            Teacher t1 = new Teacher("Pascale", SquaredRepartition);
-            Teacher t2 = new Teacher("Provot", NegativeSquaredRepartition);
+            Teacher t0 = new Teacher("Marc", delegate (int min, int max, int number) { return number; });
+            Teacher t1 = new Teacher("Pascale", delegate (int min, int max, int number)
+            {
+                return -(Math.Pow(number - min, 2) / (max - min) + min);
+            });
+
+
+            Teacher t2 = new Teacher("Provot", delegate (int min, int max, int number)
+            {
+                return Math.Pow(number - min, 2) / (max - min) + min;
+            });
 
             Student s = new Student("Tata", 0, 20);
 
