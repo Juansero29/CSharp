@@ -221,6 +221,8 @@ namespace LINQUERIES
             Dictionary<IArtiste, int> dicotimes = new Dictionary<IArtiste, int>();
 
 
+
+
             WriteLine($"\nWITH 3 LINES OF CODE:\n");
 
             d.Albums.ToList().SelectMany(album => album.SideMen.Keys).Distinct().ToList().ForEach(artist =>{int numberOfTimes = 0; d.Albums.ToList().ForEach(album => { if (!album.Leader.Equals(artist)) { numberOfTimes += album.SideMen.Count(pair => pair.Key.Equals(artist)); } });dicotimes.Add(artist, numberOfTimes);});
