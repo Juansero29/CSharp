@@ -53,20 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Docs\Instructions\Instructions%28French%29_files\css.php" />
-    <None Include="Docs\Instructions\Instructions%28French%29_files\embedapi.js.download" />
-    <None Include="Docs\Instructions\Instructions%28French%29_files\indexer.php" />
-    <None Include="Docs\Instructions\Instructions%28French%29_files\js.php" />
-    <None Include="Docs\Instructions\Instructions%28French%29_files\MathJax.js.download" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Docs\Instructions\Instructions%28French%29.html" />
-    <Content Include="Docs\Instructions\Instructions%28French%29_files\button-dw.png" />
-    <Content Include="Docs\Instructions\Instructions%28French%29_files\button-monobook.png" />
-    <Content Include="Docs\Instructions\Instructions%28French%29_files\button-rss.png" />
-    <Content Include="Docs\Instructions\Instructions%28French%29_files\button-xhtml.png" />
-    <Content Include="Docs\Instructions\Instructions%28French%29_files\icon_question.gif" />
-    <Content Include="Docs\Instructions\Instructions%28French%29_files\icon_wink.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
