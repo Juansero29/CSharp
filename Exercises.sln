@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TESTS", "TESTS\TESTS.csproj", "{2F2705F9-AA46-4E15-9182-B788722E8717}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercises", "Exercises", "{553272DB-244A-4E76-B7DC-9BFB9C6728DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TP3", "TP3", "{CD0B88CA-6899-4AEA-ACC2-D8ED7BF0EB8D}"
@@ -63,17 +61,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "!SheetsPDF", "!SheetsPDF", 
 	ProjectSection(SolutionItems) = preProject
 		Excercises\!SheetsPDF\ALL.pdf = Excercises\!SheetsPDF\ALL.pdf
 		Excercises\!SheetsPDF\TP1-2.pdf = Excercises\!SheetsPDF\TP1-2.pdf
-		Excercises\!SheetsPDF\TP10.pdf = Excercises\!SheetsPDF\TP10.pdf
-		Excercises\!SheetsPDF\TP11.pdf = Excercises\!SheetsPDF\TP11.pdf
 		Excercises\!SheetsPDF\TP12.pdf = Excercises\!SheetsPDF\TP12.pdf
 		Excercises\!SheetsPDF\TP13.pdf = Excercises\!SheetsPDF\TP13.pdf
 		Excercises\!SheetsPDF\TP3.pdf = Excercises\!SheetsPDF\TP3.pdf
 		Excercises\!SheetsPDF\TP4.pdf = Excercises\!SheetsPDF\TP4.pdf
 		Excercises\!SheetsPDF\TP5.pdf = Excercises\!SheetsPDF\TP5.pdf
-		Excercises\!SheetsPDF\TP6.pdf = Excercises\!SheetsPDF\TP6.pdf
-		Excercises\!SheetsPDF\TP7.pdf = Excercises\!SheetsPDF\TP7.pdf
-		Excercises\!SheetsPDF\TP8.pdf = Excercises\!SheetsPDF\TP8.pdf
-		Excercises\!SheetsPDF\TP9.pdf = Excercises\!SheetsPDF\TP9.pdf
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchTracker", "Excercises\TP5\MatchTracker\MatchTracker.csproj", "{AEAEFE47-F8AA-4911-BD5C-D74D0443E557}"
@@ -182,16 +174,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "IUT\TP2\Main\Main.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQUERIES", "IUT\TP3\LINQUERIES.csproj", "{185A428C-432D-43DF-B32C-371CFE12D6F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MiscTests", "MiscTests", "{69F92880-7A0D-45EA-81C3-CE99ED808C4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestsCSharp", "TestsCSharp", "{22A45D20-1E5E-46F4-9DBB-D42F0B474F80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestsWPF", "TestsWPF", "{0838CD8E-D09C-45AC-9A94-698E867D6A28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TESTS", "MiscTests\TestsCSharp\TESTS.csproj", "{2F2705F9-AA46-4E15-9182-B788722E8717}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MetroSimpleApp", "MetroSimpleApp", "{4BD8E89E-95CC-495D-8114-6415BD1BD85B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroSimpleApp.Views", "MiscTests\TestsWPF\MetroSimpleApp\MetroSimpleApp.Views\MetroSimpleApp.Views.csproj", "{374621AF-DD79-4690-AFE6-1B92E1F7AFD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroSimpleApp.Models", "MiscTests\TestsWPF\MetroSimpleApp\MetroSimpleApp.Models\MetroSimpleApp.Models.csproj", "{DCAF6287-3E88-4801-B70A-9D7D84CD32A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2F2705F9-AA46-4E15-9182-B788722E8717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F2705F9-AA46-4E15-9182-B788722E8717}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F2705F9-AA46-4E15-9182-B788722E8717}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F2705F9-AA46-4E15-9182-B788722E8717}.Release|Any CPU.Build.0 = Release|Any CPU
 		{300836AB-7FB3-41CD-9BC1-A66FB11D9E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{300836AB-7FB3-41CD-9BC1-A66FB11D9E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{300836AB-7FB3-41CD-9BC1-A66FB11D9E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -272,6 +274,18 @@ Global
 		{185A428C-432D-43DF-B32C-371CFE12D6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{185A428C-432D-43DF-B32C-371CFE12D6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{185A428C-432D-43DF-B32C-371CFE12D6F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F2705F9-AA46-4E15-9182-B788722E8717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F2705F9-AA46-4E15-9182-B788722E8717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F2705F9-AA46-4E15-9182-B788722E8717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F2705F9-AA46-4E15-9182-B788722E8717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{374621AF-DD79-4690-AFE6-1B92E1F7AFD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374621AF-DD79-4690-AFE6-1B92E1F7AFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374621AF-DD79-4690-AFE6-1B92E1F7AFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374621AF-DD79-4690-AFE6-1B92E1F7AFD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCAF6287-3E88-4801-B70A-9D7D84CD32A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCAF6287-3E88-4801-B70A-9D7D84CD32A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCAF6287-3E88-4801-B70A-9D7D84CD32A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCAF6287-3E88-4801-B70A-9D7D84CD32A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -317,5 +331,11 @@ Global
 		{F77EF205-F59B-4F3A-AD69-9FF92087C842} = {3BF29477-0430-4F4B-A136-5E40456B1892}
 		{32901699-9592-4868-9327-21299D5DF787} = {CBA47F01-6B3E-4E9E-BA6F-7E7D2B95D5FA}
 		{185A428C-432D-43DF-B32C-371CFE12D6F5} = {A6D63163-4145-4C85-B007-B334E5A674FE}
+		{22A45D20-1E5E-46F4-9DBB-D42F0B474F80} = {69F92880-7A0D-45EA-81C3-CE99ED808C4E}
+		{0838CD8E-D09C-45AC-9A94-698E867D6A28} = {69F92880-7A0D-45EA-81C3-CE99ED808C4E}
+		{2F2705F9-AA46-4E15-9182-B788722E8717} = {22A45D20-1E5E-46F4-9DBB-D42F0B474F80}
+		{4BD8E89E-95CC-495D-8114-6415BD1BD85B} = {0838CD8E-D09C-45AC-9A94-698E867D6A28}
+		{374621AF-DD79-4690-AFE6-1B92E1F7AFD2} = {4BD8E89E-95CC-495D-8114-6415BD1BD85B}
+		{DCAF6287-3E88-4801-B70A-9D7D84CD32A4} = {4BD8E89E-95CC-495D-8114-6415BD1BD85B}
 	EndGlobalSection
 EndGlobal
