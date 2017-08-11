@@ -13,7 +13,7 @@ namespace TESTS
             Console.WriteLine("WhoIAm() : I'm the base method.");
         }
 
-        public virtual void WhoIAm2()
+        public void WhoIAm2()
         {
             Console.WriteLine("WhoIAm2() : I'm the base method.");
         }
@@ -32,5 +32,18 @@ namespace TESTS
         }
 
 
+    }
+
+    class Rederived : Derived
+    {
+        public override void WhoIAm()
+        {
+            Console.WriteLine("WhoIAm(): I'm the rederived method. ");
+        }
+
+        public new void WhoIAm2()
+        {
+            Console.WriteLine("WhoIAm2(): I'm the rederived method. ");
+        }
     }
 }

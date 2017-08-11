@@ -18,17 +18,20 @@
             <Border  Margin="10" Width="100" Height="100" BorderBrush="Black">
                 <Image Source="images/buttonMoon.jpg"/>
             </Border>
-            <TextBlock Text="{Binding Nom}"/>
             <Border Margin="10" Width="100" Height="100" BorderBrush="Black">
                 <Image Source="images/hector.jpg"/>
             </Border>
-            
+
             <Border Margin="10" Width="100" Height="100" BorderBrush="Black">
                 <Image Source="images/sean.jpg"/>
             </Border>
-            
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{Binding Nom}"/>
+            </Grid>
         </StackPanel>
     </Border>
-
 
 </Controls:MetroWindow>
